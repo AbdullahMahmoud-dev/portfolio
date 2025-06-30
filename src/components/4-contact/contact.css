@@ -1,0 +1,119 @@
+/* Layout styling for the contact section's main flex container */
+.contect .flex {
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+/* Title inside the flex container */
+.contect .flex .title {
+  font-size: 1.8rem;
+  color: var(--title);
+  text-transform: capitalize;
+}
+
+/* Envelope icon styling */
+.contect .flex .icon-envelope {
+  font-size: 1.8rem;
+  color: var(--subtitle);
+}
+
+/* Subtitle text styling */
+.contect .sub-title {
+  color: var(--subtitle);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  line-height: 1.65rem;
+  margin-bottom: 2rem;
+}
+
+/* Label styling */
+.contect label {
+  color: var(--subtitle);
+}
+
+/* Input fields and textarea styling (email and message) */
+.contect #Message,
+.contect #email {
+  all: unset;
+  background-color: rgba(63, 63, 70, 0.15);
+  border: 1px solid rgb(63, 63, 70);
+  width: 16rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+.light #Message,
+.light #email {
+  color: black;
+  background-color: #fff;
+}
+
+/* Border color on focus for inputs */
+.contect #Message:focus,
+.contect #email:focus {
+  border: 1px solid rgb(45, 212, 191);
+}
+
+/* Email input specific styling (empty block for now) */
+.contect #email {
+}
+
+/* Message textarea specific styling */
+.contect #Message {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+/* Submit button styling */
+section.contect button {
+  background-color: rgba(36, 37, 46, 1);
+  padding: 0.7rem 1.5rem;
+  text-align: center;
+  width: 30%;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+  transition: 0.2s;
+  margin-top: 1rem;
+}
+
+/* Button hover effect */
+section.contect button:hover {
+  scale: 0.9rem;
+}
+.light .arbsucessfully {
+  color: black;
+}
+/* Responsive adjustments for screens <= 500px */
+@media (max-width: 650px) {
+  section.contect form {
+    width: 90%;
+  }
+
+  /* Stack flex items vertically on small screens */
+  section.contect form .flex {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  /* Inputs and textarea full width on small screens */
+  .contect #Message,
+  .contect #email {
+    width: 100%;
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+
+  /* Centered submit button on small screens */
+  section.contect form button {
+    width: 50%;
+    padding: 0.7rem 0;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1100px) {
+  .contact-animation {
+    display: none;
+  }
+}

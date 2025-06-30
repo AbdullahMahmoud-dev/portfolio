@@ -1,0 +1,68 @@
+/* Main hero section margin from top */
+section.hero {
+  margin-top: 2rem;
+}
+
+/* Left section grows to take available space */
+section.hero .left-section {
+  flex-grow: 1;
+}
+
+/* Avatar image styling */
+section.hero .avatar {
+  border: 1px solid orange;
+  padding: 1px;
+  box-shadow: 4px 4px 40px gray inset;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+}
+
+/* Verified icon next to avatar */
+section.hero .icon-verified {
+  color: var(--blue);
+  font-size: 1.3rem;
+}
+
+/* Main title text styling */
+section.hero .title {
+  font-size: 3rem;
+  line-height: 4rem;
+  margin: 24px 0;
+  width: 80%;
+  color: var(--title);
+}
+
+/* Subtitle paragraph styling */
+section.hero .sub-title {
+  color: var(--subtitle);
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  width: 80%;
+}
+
+/* Container for all social icons */
+section.hero .all-icons {
+  font-size: 1.3rem;
+  color: var(--subtitle);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Hover effect for individual social icons */
+section.hero .all-icons .icon:hover {
+  font-size: 1.5rem;
+  transition: 0.2s;
+  cursor: pointer;
+  color: var(--icon-hover);
+}
+.animation-dev{
+  width: 80%;
+  translate: 50px 55px;
+}
+@media (max-width: 1050px) {
+  .animation-dev{
+    display: none;
+  }
+}

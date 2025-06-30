@@ -1,0 +1,103 @@
+main.flex {
+  gap: 3rem;
+  align-items: start;
+}
+section.left-section {
+  flex-direction: column;
+  gap: 10px;
+}
+section.right-section.flex{
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+} 
+main section.left-section button{
+    background-color: rgba(36, 37, 46, 1);
+    width: 11rem;
+    padding: 0.7rem 0;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    opacity: 0.5;
+    border-radius: 5px ;
+    transition: 0.2s;
+}
+main section.left-section button:hover{
+    opacity: 1;
+    
+}
+.card{
+    border: 1px solid rgba(93, 188, 252, 0.3);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.light .card, .light .card:hover  {
+    border:none;
+}
+.card img{
+    border-radius: 5px;
+}
+.card:hover{
+    border: 1px solid var(--blue);
+    rotate: 1deg;
+    cursor: pointer;
+}
+.card .box{
+    padding: 1rem 0.4rem;
+}
+.card .box .title{
+    color: var(--title);
+}
+.card .box .sub-title{
+    color: var(--subtitle);
+    font-size: 0.8rem;
+    margin: 0.7rem 0;
+}
+.card .box  .flex{
+    justify-content: space-between;
+}
+.card .box .flex .icon-card{
+    gap: 1rem;
+}
+.card .box .flex .icon-card a{
+    color: var(--subtitle);
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+.card .box .flex .icon-card a:hover{
+    color: var(--icon-hover);
+    font-size: 1.2rem;
+}
+.card .box .flex a{
+    color: var(--title);
+}
+.card .box .flex .link{
+    font-size: 0.9rem;
+    color: var(--blue);
+    margin-right: 12px;
+}
+.left-section .active{
+    font-size: 1.3rem;
+    border: 1px solid #705656;
+    opacity: 1;
+}
+@media (max-width: 600px) {
+    main.flex {
+        gap: 3rem;
+        align-items: center;
+        flex-direction: column;
+      }
+      section.left-section {
+        flex-direction: row;
+        flex-wrap: wrap;justify-content: center;
+        gap: 10px;
+      }
+      main section.left-section button{
+        
+        width: 8rem;
+        padding: 0.8rem 0;
+        text-align: center;
+        font-size: 0.9rem;
+        
+    }
+}
