@@ -1,0 +1,73 @@
+/* ===================================
+ * 1. SKILLS SECTION STYLES
+ * =================================== */
+
+/* Title for the skills section */
+.skills-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--title);
+}
+
+/* Flex container for the skills tags */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Individual skill tag styling */
+.skill {
+  /* On large screens, this defaults to two items per row (50% - gap) */
+  flex: 1 1 calc(50% - 10px); 
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--title);
+  background: rgba(0, 174, 255, 0.1);
+  transition: 0.3s;
+  text-align: center; 
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+/* Hover effect for skill tags */
+.skill:hover {
+  background: rgba(0, 174, 255, 0.329);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ===================================
+ * 2. RESPONSIVE DESIGN
+ * =================================== */
+
+/* Responsive: Two items per row on screens <= 900px (Default behavior is already 50%) */
+/* This media query can be optimized/removed if the default flex rule is sufficient */
+@media (max-width: 900px) {
+  .skill {
+    flex: 1 1 calc(50% - 10px); 
+  }
+}
+
+/* Responsive: One item per row on screens <= 500px */
+@media (max-width: 500px) {
+  .skill {
+    flex: 1 1 100%; /* Single item per line */
+  }
+}
+
+/* General responsive adjustments for the whole container on tablets/mobiles */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Styling for the (currently non-existent) image/avatar section */
+  /* If you add an image later, this style will apply: */
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+}

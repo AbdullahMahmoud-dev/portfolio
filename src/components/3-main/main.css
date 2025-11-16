@@ -1,103 +1,162 @@
+/* ===================================
+ * 1. MAIN LAYOUT AND SECTIONS
+ * =================================== */
+
+/* Main container styling */
 main.flex {
   gap: 3rem;
-  align-items: start;
+  align-items: flex-start; /* Changed 'start' to 'flex-start' for clarity */
 }
+
+/* Left section (Filter Buttons) styling */
 section.left-section {
   flex-direction: column;
   gap: 10px;
 }
-section.right-section.flex{
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-} 
-main section.left-section button{
-    background-color: rgba(36, 37, 46, 1);
-    width: 11rem;
-    padding: 0.7rem 0;
-    text-align: center;
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    opacity: 0.5;
-    border-radius: 5px ;
-    transition: 0.2s;
+
+/* Right section (Project Cards) styling */
+section.right-section.flex {
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
 }
-main section.left-section button:hover{
-    opacity: 1;
-    
+
+/* ===================================
+ * 2. FILTER BUTTON STYLES
+ * =================================== */
+
+/* Default button styling */
+main section.left-section button {
+  background-color: rgba(36, 37, 46, 1);
+  width: 11rem;
+  padding: 0.7rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  opacity: 0.5;
+  border-radius: 5px;
+  transition: 0.2s;
 }
-.card{
-    border: 1px solid rgba(93, 188, 252, 0.3);
-    border-radius: 5px;
-    transition: 0.3s;
+
+/* Button hover effect */
+main section.left-section button:hover {
+  opacity: 1;
 }
-.light .card, .light .card:hover  {
-    border:none;
+
+/* Active button styling */
+.left-section .active {
+  font-size: 1.3rem;
+  border: 1px solid #705656;
+  opacity: 1;
 }
-.card img{
-    border-radius: 5px;
+
+/* ===================================
+ * 3. PROJECT CARD STYLES
+ * =================================== */
+
+/* Card container styling */
+.card {
+  border: 1px solid rgba(93, 188, 252, 0.3);
+  border-radius: 5px;
+  transition: 0.3s;
 }
-.card:hover{
-    border: 1px solid var(--blue);
-    rotate: 1deg;
-    cursor: pointer;
+
+/* Card styling in Light Mode */
+.light .card,
+.light .card:hover {
+  border: none;
 }
-.card .box{
-    padding: 1rem 0.4rem;
+
+/* Card image styling */
+.card img {
+  border-radius: 5px;
 }
-.card .box .title{
-    color: var(--title);
+
+/* Card image dimensions */
+.cardimage {
+  width: 200px;
+  height: 100px;
 }
-.card .box .sub-title{
-    color: var(--subtitle);
-    font-size: 0.8rem;
-    margin: 0.7rem 0;
+
+/* Card hover effect */
+.card:hover {
+  border: 1px solid var(--blue);
+  rotate: 1deg;
+  cursor: pointer;
 }
-.card .box  .flex{
-    justify-content: space-between;
+
+/* Card content box styling */
+.card .box {
+  padding: 1rem 0.4rem;
 }
-.card .box .flex .icon-card{
-    gap: 1rem;
+
+/* Card title styling */
+.card .box .title {
+  color: var(--title);
+  font-size: 1rem;
 }
-.card .box .flex .icon-card a{
-    color: var(--subtitle);
-    font-size: 1.1rem;
-    transition: 0.3s;
+
+/* Card subtitle/description styling */
+.card .box .sub-title {
+  color: var(--subtitle);
+  font-size: 0.8rem;
+  margin: 0.7rem 0;
 }
-.card .box .flex .icon-card a:hover{
-    color: var(--icon-hover);
-    font-size: 1.2rem;
+
+/* Flex container within the card box */
+.card .box .flex {
+  justify-content: space-between;
 }
-.card .box .flex a{
-    color: var(--title);
+
+/* Icons container styling */
+.card .box .flex .icon-card {
+  gap: 1rem;
 }
-.card .box .flex .link{
-    font-size: 0.9rem;
-    color: var(--blue);
-    margin-right: 12px;
+
+/* Icon link default styling */
+.card .box .flex .icon-card a {
+  color: var(--subtitle);
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
-.left-section .active{
-    font-size: 1.3rem;
-    border: 1px solid #705656;
-    opacity: 1;
+
+/* Icon link hover effect */
+.card .box .flex .icon-card a:hover {
+  color: var(--icon-hover);
+  font-size: 1.2rem;
 }
+
+/* More link styling */
+.card .box .flex .link {
+  font-size: 0.9rem;
+  color: var(--blue);
+  margin-right: 12px;
+}
+
+/* ===================================
+ * 4. RESPONSIVE DESIGN
+ * =================================== */
+
 @media (max-width: 600px) {
-    main.flex {
-        gap: 3rem;
-        align-items: center;
-        flex-direction: column;
-      }
-      section.left-section {
-        flex-direction: row;
-        flex-wrap: wrap;justify-content: center;
-        gap: 10px;
-      }
-      main section.left-section button{
-        
-        width: 8rem;
-        padding: 0.8rem 0;
-        text-align: center;
-        font-size: 0.9rem;
-        
-    }
+  /* Main container layout for small screens */
+  main.flex {
+    gap: 3rem;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Filter buttons layout for small screens */
+  section.left-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Filter button size adjustment for small screens */
+  main section.left-section button {
+    width: 8rem;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
 }

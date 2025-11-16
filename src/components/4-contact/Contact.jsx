@@ -4,23 +4,34 @@ import Lottie from "lottie-react";
 import doneAnimation from "../../animation/done.json";
 import contactusAnimation from "../../animation/contact us.json";
 import "./contact.css";
+
+// Contact component using Formspree for form handling
 const Contact = () => {
-  const [state, handleSubmit] = useForm("mrbqlbno");
+  // Initialize form handling with Formspree
+  const [state, handleSubmit] = useForm("mrbqlbno"); // Replace with your actual Formspree ID
 
   return (
     <section className="contect">
-      <div className="flex ">
-        <div className="icon-envelope"></div>
-        <h1 className="title">contact us</h1>
+      {/* Section Header */}
+      <div className="flex section-header">
+        <div className="icon-envelope" />
+        <h1 className="title">Contact Us</h1>
       </div>
+
+      {/* Subtitle / Description */}
       <p className="sub-title">
-        contact us for more information and get notified when i publish
+        Contact us for more information and get notified when I publish
         something new.
       </p>
-      <div style={{ justifyContent: "space-between" }} className="flex">
+
+      {/* Main Content Area (Form and Animation) */}
+      <div style={{ justifyContent: "space-between" }} className="flex content-wrapper">
+        
+        {/* Left Side: Contact Form */}
         <div>
           <form onSubmit={handleSubmit}>
-            <div className="flex">
+            {/* Email Input Field */}
+            <div className="flex input-group">
               <label htmlFor="email">Email Address:</label>
               <input
                 autoComplete="off"
@@ -36,42 +47,49 @@ const Contact = () => {
                 errors={state.errors}
               />
             </div>
-            <div className="flex">
+
+            {/* Message Textarea Field */}
+            <div className="flex input-group">
               <label htmlFor="Message">Your Message:</label>
               <textarea
                 required
                 name="message"
                 id="Message"
                 placeholder="Message"
-              ></textarea>
+              />
               <ValidationError
                 prefix="Message"
                 field="message"
                 errors={state.errors}
               />
             </div>
+
+            {/* Submit Button */}
             <button type="submit" disabled={state.submitting}>
-              {state.submitting ? "submitting ..." : "submit"}
+              {state.submitting ? "Submitting..." : "Submit"}
             </button>
+            
+            {/* Success Message */}
             {state.succeeded && (
-              <div className="flex">
+              <div className="flex success-message">
                 <Lottie
                   loop={false}
                   style={{ height: 70 }}
                   animationData={doneAnimation}
                 />
                 <p className="arbsucessfully">
-                  your message has been sent successfully
+                  Your message has been sent successfully
                 </p>
               </div>
             )}
           </form>
         </div>
 
-        <div className="animation ">
+        {/* Right Side: Contact Animation */}
+        <div className="animation">
           <Lottie
             className="contact-animation"
-            style={{ height: 300  }}
+            style={{ height: 300 }}
             animationData={contactusAnimation}
           />
         </div>

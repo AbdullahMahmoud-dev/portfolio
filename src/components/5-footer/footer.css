@@ -1,24 +1,48 @@
+/* ===================================
+ * 1. FOOTER LAYOUT
+ * =================================== */
+
+/* Main footer container (flex) styling */
 footer.flex {
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+
+/* Footer navigation list container */
 footer.flex .footerend {
   gap: 1rem;
 }
+
+/* ===================================
+ * 2. LINKS AND TEXT STYLES
+ * =================================== */
+
+/* Footer links default styling */
 footer.flex .footerend a {
   color: var(--subtitle);
   transition: 0.2s;
 }
+
+/* Footer links hover effect */
 footer.flex .footerend a:hover {
   color: var(--blue);
-  font-size: 1.1rem;
 }
+
+/* Copyright/Year text styling */
 footer.flex p {
   color: rgb(113, 113, 122);
 }
+
+/* ===================================
+ * 3. RESPONSIVE DESIGN
+ * =================================== */
+
+/* Responsive adjustments for screens <= 600px */
 @media (max-width: 600px) {
+  /* Stack footer items vertically on small screens */
   footer.flex {
     flex-direction: column;
     gap: 2rem;
+    align-items: center; /* Center items when stacked */
   }
 }

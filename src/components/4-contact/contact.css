@@ -1,23 +1,27 @@
-/* Layout styling for the contact section's main flex container */
+/* ===================================
+ * 1. SECTION HEADER STYLES
+ * =================================== */
+
+/* Layout styling for the contact section's main flex container (Header row) */
 .contect .flex {
   gap: 0.7rem;
   margin-bottom: 1rem;
 }
 
-/* Title inside the flex container */
+/* Title styling within the header flex container */
 .contect .flex .title {
   font-size: 1.8rem;
   color: var(--title);
   text-transform: capitalize;
 }
 
-/* Envelope icon styling */
+/* Envelope icon appearance */
 .contect .flex .icon-envelope {
   font-size: 1.8rem;
   color: var(--subtitle);
 }
 
-/* Subtitle text styling */
+/* Subtitle/Description text styling */
 .contect .sub-title {
   color: var(--subtitle);
   font-size: 0.8rem;
@@ -26,15 +30,19 @@
   margin-bottom: 2rem;
 }
 
-/* Label styling */
+/* ===================================
+ * 2. FORM INPUTS & LABELS
+ * =================================== */
+
+/* Label text color */
 .contect label {
   color: var(--subtitle);
 }
 
-/* Input fields and textarea styling (email and message) */
+/* Input fields and textarea base styling */
 .contect #Message,
 .contect #email {
-  all: unset;
+  all: unset; /* Remove default styling */
   background-color: rgba(63, 63, 70, 0.15);
   border: 1px solid rgb(63, 63, 70);
   width: 16rem;
@@ -42,29 +50,40 @@
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
 }
+
+/* Input/Textarea styling in Light Mode */
 .light #Message,
 .light #email {
   color: black;
   background-color: #fff;
 }
 
-/* Border color on focus for inputs */
+/* Border color on focus for input fields */
 .contect #Message:focus,
 .contect #email:focus {
   border: 1px solid rgb(45, 212, 191);
 }
 
-/* Email input specific styling (empty block for now) */
+/* Email input specific styling (currently empty) */
 .contect #email {
 }
 
 /* Message textarea specific styling */
 .contect #Message {
   min-height: 9rem;
-  resize: vertical;
+  resize: vertical; /* Allow vertical resizing only */
 }
 
-/* Submit button styling */
+/* Success message text color in Light Mode */
+.light .arbsucessfully {
+  color: black;
+}
+
+/* ===================================
+ * 3. SUBMIT BUTTON
+ * =================================== */
+
+/* Submit button appearance and size */
 section.contect button {
   background-color: rgba(36, 37, 46, 1);
   padding: 0.7rem 1.5rem;
@@ -79,18 +98,28 @@ section.contect button {
 
 /* Button hover effect */
 section.contect button:hover {
-  scale: 0.9rem;
+  scale: 0.9rem; /* Note: This value is non-standard CSS, use transform: scale(0.9) for scaling */
 }
-.light .arbsucessfully {
-  color: black;
+
+/* ===================================
+ * 4. RESPONSIVE DESIGN
+ * =================================== */
+
+/* Hide Lottie animation on medium screens and down */
+@media (max-width: 1100px) {
+  .contact-animation {
+    display: none;
+  }
 }
-/* Responsive adjustments for screens <= 500px */
+
+/* Responsive adjustments for smaller screens (<= 650px) */
 @media (max-width: 650px) {
+  /* Form width on small screens */
   section.contect form {
     width: 90%;
   }
 
-  /* Stack flex items vertically on small screens */
+  /* Stack flex items vertically in the form input groups */
   section.contect form .flex {
     flex-direction: column;
     align-items: start;
@@ -101,7 +130,7 @@ section.contect button:hover {
   .contect #email {
     width: 100%;
     margin-left: 0;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0; /* Adjusted padding */
   }
 
   /* Centered submit button on small screens */
@@ -110,10 +139,5 @@ section.contect button:hover {
     padding: 0.7rem 0;
     display: block;
     margin: 0 auto;
-  }
-}
-@media (max-width: 1100px) {
-  .contact-animation {
-    display: none;
   }
 }

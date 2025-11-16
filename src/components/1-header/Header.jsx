@@ -1,103 +1,72 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
+import ModalNav from "./ModalNav"; // Import the separated component
 
-// Header Component
+// Main Header component
 const Header = () => {
-  // State to control the modal visibility
-  const [showmodal, setShowmodal] = useState(false);
+  // State for showing/hiding the modal
+  const [showModal, setShowModal] = useState(false);
+
+  // Theme state (pulled from localStorage or defaults to "dark")
   const [theme, setTheme] = useState(
     localStorage.getItem("currentmode") ?? "dark"
   );
+
+  // Side effect to apply the theme class to the document body
   useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
-    }
+    document.body.classList.remove("dark", "light");
+    document.body.classList.add(theme);
   }, [theme]);
+
+  // Function to toggle the theme
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const newTheme = prev === "dark" ? "light" : "dark";
+      localStorage.setItem("currentmode", newTheme);
+      return newTheme;
+    });
+  };
 
   return (
     <header className="flex">
-      {/* Menu Button (shows modal on click) */}
+      {/* ⬅️ Menu Button (Mobile) */}
       <button
-        onClick={() => {
-          setShowmodal(true);
-        }}
+        onClick={() => setShowModal(true)}
         className="menu icon-menu flex"
+        aria-label="Open Menu"
       />
 
-      {/* Empty div (can be used for layout spacing) */}
-      <div />
+      <div /> {/* Flexible spacing divider */}
 
-      {/* Navigation Bar */}
+      {/* 📚 Navigation Bar (Desktop) */}
       <nav>
         <ul className="flex">
           <li>
-            <a href="/">About</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="/">Articales</a>{" "}
-            {/* Note: Typo here, should be "Articles" */}
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="/">Projects</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="/">Speaking</a>
-          </li>
-          <li>
-            <a href="/">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
 
-      {/* Mode Toggle Button */}
-      <button
-        onClick={() => {
-          localStorage.setItem(
-            "currentmode",
-            theme === "dark" ? "light" : "dark"
-          );
-          setTheme(localStorage.getItem("currentmode"));
-        }}
-        className="mode flex"
-      >
-        {theme === "dark" ? (<span className="icon-moon-o"></span>) : (<span className="icon-sun"></span>)}
+      {/* ☀️/🌙 Mode Toggle Button */}
+      <button onClick={toggleTheme} className="mode flex" aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
+        {theme === "dark" ? (
+          <span className="icon-moon-o" />
+        ) : (
+          <span className="icon-sun" />
+        )}
       </button>
 
-      {/* Modal (shown only when showmodal is true) */}
-      {showmodal && (
-        <div className="fixed">
-          <ul className="modal">
-            <li>
-              {/* Clear (Close) Modal Button */}
-              <button
-                className="icon-clear"
-                onClick={() => {
-                  setShowmodal(false);
-                }}
-              />
-            </li>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Articales</a> {/* Again typo: "Articles" */}
-            </li>
-            <li>
-              <a href="/">Projects</a>
-            </li>
-            <li>
-              <a href="/">Speaking</a>
-            </li>
-            <li>
-              <a href="/">Uses</a>
-            </li>
-          </ul>
-        </div>
-      )}
+      {/* 📱 Modal Navigation (Mobile) */}
+      {showModal && <ModalNav setShowModal={setShowModal} />}
     </header>
   );
 };

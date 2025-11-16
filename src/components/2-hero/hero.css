@@ -1,3 +1,7 @@
+/* ===================================
+ * 1. HERO SECTION LAYOUT
+ * =================================== */
+
 /* Main hero section margin from top */
 section.hero {
   margin-top: 2rem;
@@ -6,6 +10,15 @@ section.hero {
 /* Left section grows to take available space */
 section.hero .left-section {
   flex-grow: 1;
+}
+
+/* ===================================
+ * 2. TEXT AND AVATAR STYLES
+ * =================================== */
+
+/* Title styling - color for inner span */
+h1 span {
+  color: var(--blue);
 }
 
 /* Avatar image styling */
@@ -42,27 +55,89 @@ section.hero .sub-title {
   width: 80%;
 }
 
+/* Arabic subtitle specific styling */
+.sub-title[dir="rtl"] {
+  text-align: right;
+  font-size: 0.95rem; /* Slightly larger than English */
+  line-height: 1.6rem;
+  width: 100%;
+}
+
+/* ===================================
+ * 3. SOCIAL ICONS
+ * =================================== */
+
 /* Container for all social icons */
 section.hero .all-icons {
-  font-size: 1.3rem;
-  color: var(--subtitle);
+  font-size: 1.6rem;
   gap: 1.5rem;
   margin: 1.5rem 0;
 }
-
+section.hero .all-icons .icon {
+  color: var(--title);
+}
 /* Hover effect for individual social icons */
 section.hero .all-icons .icon:hover {
-  font-size: 1.5rem;
   transition: 0.2s;
   cursor: pointer;
-  color: var(--icon-hover);
+  color: var(--blue);
 }
-.animation-dev{
+
+/* ===================================
+ * 4. INLINE TRANSLATION BUTTON
+ * =================================== */
+
+.translate-inline {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border: 1px solid var(--blue);
+  background: rgba(0, 174, 255, 0.1);
+  color: var(--blue);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.translate-inline:hover {
+  background: rgba(0, 174, 255, 0.329);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Inline translation button specific styling for Arabic text */
+.sub-title[dir="rtl"] .translate-inline {
+  margin-left: 0;
+  margin-right: 8px; /* Appears next to the last word */
+}
+
+/* ===================================
+ * 5. LOTTIE ANIMATION
+ * =================================== */
+
+.animation-dev {
   width: 80%;
   translate: 50px 55px;
 }
+
+/* ===================================
+ * 6. RESPONSIVE DESIGN
+ * =================================== */
+
 @media (max-width: 1050px) {
-  .animation-dev{
+  /* Hide animation on small screens */
+  .animation-dev {
     display: none;
+  }
+  /* Adjust title size on small screens */
+  section.hero .title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 100%; /* Use full width on small screens */
+  }
+  /* Adjust subtitle width on small screens */
+  section.hero .sub-title {
+    width: 100%;
   }
 }

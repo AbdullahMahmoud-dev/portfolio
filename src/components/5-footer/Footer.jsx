@@ -1,23 +1,28 @@
 import React from "react";
 import "./footer.css";
+
+// Footer component displaying navigation links and copyright year
 const Footer = () => {
   return (
     <footer className="flex">
+      {/* Footer Navigation Links */}
       <ul className="footerend flex">
         <li>
-          <a href="">About</a>
+          <a href="#about">About</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
-          <a href="">Projects</a>
+          <a href="#projects">Projects</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
-          <a href="">Speaking</a>
+          <a href="#speaking">Speaking</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
-          <a href="">Uses</a>
+          <a href="#uses">Uses</a> {/* Added # to href for typical navigation */}
         </li>
       </ul>
-      <p>2024</p>
+      
+      {/* Copyright/Year Text */}
+      <p>© 2024</p> {/* Added © symbol for completeness */}
     </footer>
   );
 };

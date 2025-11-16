@@ -1,38 +1,33 @@
-/* -----------------------------------
-   Header Flexbox Styling
------------------------------------ */
+/* ===================================
+ * 1. GENERAL HEADER STYLES
+ * =================================== */
+
+/* 1.1 Header Flexbox Styling */
 header.flex {
   justify-content: space-between;
   padding: 0 4.4rem;
   margin-top: 1.2rem;
 }
 
-/* -----------------------------------
-   Navigation Bar Styling
------------------------------------ */
+/* 1.2 Navigation Bar Styling */
 header nav {
   background-color: var(--bgheader);
   padding: 0.7rem 1.5rem;
   border-radius: 55px;
   box-shadow: 1px 1px 40px rgb(49, 48, 48);
 }
+/* Navigation Bar in Light Mode */
 .light header nav {
   background-color: var(--bgheader);
-  padding: 0.7rem 1.5rem;
-  border-radius: 55px;
   box-shadow: 1px 1px 40px rgba(49, 48, 48, 0.062);
 }
 
-/* -----------------------------------
-   Header List (ul) Styling
------------------------------------ */
+/* 1.3 Header List (ul) Styling */
 header ul {
   gap: 20px;
 }
 
-/* -----------------------------------
-   Header Links Styling
------------------------------------ */
+/* 1.4 Header Links Styling */
 header ul li a {
   color: var(--title);
   opacity: 0.88;
@@ -40,42 +35,64 @@ header ul li a {
   font-weight: 500;
 }
 
-/* -----------------------------------
-   Header Links Hover Effects
------------------------------------ */
+/* 1.5 Header Links Hover Effects */
 header ul li a:hover {
   color: var(--blue);
-  opacity: 1;
-  font-size: 0.9rem;
 }
 
-/* -----------------------------------
-   Header Button Styling
------------------------------------ */
+/* 1.6 Header Button Styling (General) */
 header button {
   font-size: 1.2rem;
 }
 
-/* -----------------------------------
-   Header Menu Button (hidden by default)
------------------------------------ */
+/* 1.7 Header Menu Button (hidden by default) */
 header button.menu {
   display: none;
 }
 
-/* -----------------------------------
-   Fixed Header Background Overlay
------------------------------------ */
+/* 1.8 Mode Toggle and Menu Icon Styling */
+header .icon-menu,
+header button.mode {
+  background-color: var(--bgheader);
+  height: 2rem;
+  width: 2rem;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.1rem;
+  border: 1px solid rgba(250, 128, 114, 0.089);
+  color: var(--subtitle);
+  transition: 0.2s;
+  box-shadow: 1px 1px 40px rgba(0, 0, 255, 0.089);
+}
+
+/* 1.9 Mode Toggle and Menu Icon Hover Effects */
+header .icon-menu:hover,
+header button.mode:hover {
+  color: var(--title);
+  border: 1px solid rgba(250, 128, 114, 0.76);
+}
+
+/* 1.10 Specific Sun Icon Styling */
+.icon-sun {
+  color: orange;
+}
+
+/* ===================================
+ * 2. MODAL NAVIGATION STYLES
+ * =================================== */
+
+/* 2.1 Fixed Header Background Overlay */
 header .fixed {
   position: fixed;
   inset: 0;
   background-color: rgba(47, 47, 48, 0.87);
   backdrop-filter: blur(4px);
+  z-index: 100;
 }
 
-/* -----------------------------------
-   Modal Animation Keyframes
------------------------------------ */
+/* 2.2 Modal Animation Keyframes */
 @keyframes myanemy {
   0% {
     scale: 0;
@@ -88,9 +105,7 @@ header .fixed {
   }
 }
 
-/* -----------------------------------
-   Modal List Styling
------------------------------------ */
+/* 2.3 Modal List Styling */
 header ul.modal {
   animation: myanemy 0.8s 1;
   width: 85%;
@@ -102,25 +117,19 @@ header ul.modal {
   background-color: var(--secondary);
 }
 
-/* -----------------------------------
-   Modal List Item Styling
------------------------------------ */
+/* 2.4 Modal List Item Styling */
 header ul.modal li {
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.7rem;
   padding-top: 0.5rem;
 }
 
-/* -----------------------------------
-   Modal Last List Item (remove border)
------------------------------------ */
+/* 2.5 Modal Last List Item (remove border) */
 header ul.modal li:last-child {
   border: none;
 }
 
-/* -----------------------------------
-   Modal First List Item (align right)
------------------------------------ */
+/* 2.6 Modal First List Item (Close button alignment) */
 header ul.modal li:first-child {
   text-align: right;
   border: none;
@@ -128,47 +137,12 @@ header ul.modal li:first-child {
   padding-top: 0.2rem;
 }
 
-/* -----------------------------------
-   Modal Links Styling
------------------------------------ */
+/* 2.7 Modal Links Styling */
 header ul.modal li a {
   font-size: 1rem;
 }
 
-/* -----------------------------------
-   Icon Menu and Mode Button Styling
------------------------------------ */
-header .icon-menu,
-header button.mode {
-  background-color: var(--bgheader);
-  height: 2rem;
-  width: 2rem;
-  justify-content: center;
-  text-align: center;
-  border-radius: 50%;
-  padding: 0.1rem;
-  border: 1px solid rgba(250, 128, 114, 0.089);
-  color: var(--subtitle);
-  transition: 0.2s;
-  box-shadow: 1px 1px 40px rgba(0, 0, 255, 0.089);
-}
-
-/* -----------------------------------
-   Icon Menu and Mode Button Hover Effects
------------------------------------ */
-header .icon-menu:hover,
-header button.mode:hover {
-  color: var(--title);
-  border: 1px solid rgba(250, 128, 114, 0.76);
-}
-
-.icon-sun{
-  color: orange;
-}
-
-/* -----------------------------------
-   Clear Icon Styling
------------------------------------ */
+/* 2.8 Clear Icon Styling */
 header .icon-clear {
   font-size: 1.4rem;
   font-weight: 700;
@@ -176,18 +150,18 @@ header .icon-clear {
   transition: 0.2s;
 }
 
-/* -----------------------------------
-   Clear Icon Hover Effects
------------------------------------ */
+/* 2.9 Clear Icon Hover Effects */
 header .icon-clear:hover {
   font-size: 1.5rem;
   color: rgba(0, 255, 55, 0.664);
   rotate: 180deg;
 }
 
-/* -----------------------------------
-   Responsive Design for Small Screens
------------------------------------ */
+/* ===================================
+ * 3. RESPONSIVE DESIGN
+ * =================================== */
+
+/* 3.1 Responsive Design for Small Screens (max-width: 700px) */
 @media (max-width: 700px) {
   /* Hide navigation bar on small screens */
   header nav {
@@ -196,5 +170,9 @@ header .icon-clear:hover {
   /* Show menu button on small screens */
   header button.menu {
     display: block;
+  }
+  /* Reduce padding on very small screens */
+  header.flex {
+    padding: 0 2rem;
   }
 }
