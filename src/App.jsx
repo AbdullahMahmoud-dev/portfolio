@@ -46,7 +46,7 @@ const App = () => {
 
       {/* About Section */}
       <div className="divider" />
-      <div id="about">
+      <div id="skills">
         <About />
       </div>
 

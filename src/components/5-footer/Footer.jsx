@@ -8,13 +8,13 @@ const Footer = () => {
       {/* Footer Navigation Links */}
       <ul className="footerend flex">
         <li>
-          <a href="#about">About</a> {/* Added # to href for typical navigation */}
+          <a href="#home">About</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
           <a href="#projects">Projects</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
-          <a href="#speaking">Speaking</a> {/* Added # to href for typical navigation */}
+          <a href="#contact">Speaking</a> {/* Added # to href for typical navigation */}
         </li>
         <li>
           <a href="#uses">Uses</a> {/* Added # to href for typical navigation */}

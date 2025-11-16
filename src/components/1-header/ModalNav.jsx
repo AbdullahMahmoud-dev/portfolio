@@ -28,8 +28,8 @@ const ModalNav = ({ setShowModal }) => {
           </a>
         </li>
         <li>
-          <a href="#about" onClick={handleLinkClick}>
-            About
+          <a href="#skills" onClick={handleLinkClick}>
+            Skills
           </a>
         </li>
         <li>
